@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fields</title>
+    <!-- adaugă aici linkurile către CSS-ul tău -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/fields.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="
+ padding-bottom: 4px;padding-top: 4px;">
+
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand me-2" href="index.html">
+                <img src="images/logo.png" height="55" alt="Logo" loading="lazy" style="margin-top: -1px;" />
+            </a>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><span class="small-text">ActivityFinder</span></a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <!-- Search Bar -->
+            <div class="search-bar">
+                <!-- <h2 class="search-title">Where Players Meet the Playground</h2> -->
+                <form action="fields.html" method="get">
+                    <select name="city" id="selectoras">
+                        <option value="">Selectează orașul</option>
+                        <option value="Bucuresti">Bucuresti</option>
+                        <option value="Constanta">Constanta</option>
+                        <option value="Pitesti">Pitesti</option>
+                        <option value="Cluj">Cluj</option>
+                        <option value="Timisoara">Timisoara</option>
+                        <option value="Iasi">Iasi</option>
+                    </select>
+                    <select name="sport">
+                        <option value="">Selectează sportul</option>
+                        <option value="Fotbal">Fotbal</option>
+                        <option value="Tenis de camp">Tenis de camp</option>
+                        <option value="Baschet">Baschet</option>
+                        <option value="Tenis de masa">Tenis de masa</option>
+                        <option value="Squash">Squash</option>
+                        <option value="Handbal">Handbal</option>
+                    </select>
+                    <input type="date" name="date" placeholder="Selectează data" required>
+                    <!-- <input type="time" name="time" placeholder="Selectează ora" step="3600" value="00:00"> -->
+                    <select name="hour" required>
+                        <option value="">Selectează ora</option>
+                        <option value="10-11">10:00 - 11:00</option>
+                        <option value="11-12">11:00 - 12:00</option>
+                        <option value="12-13">12:00 - 13:00</option>
+                        <option value="13-14">13:00 - 14:00</option>
+                        <option value="14-15">14:00 - 15:00</option>
+                        <option value="15-16">15:00 - 16:00</option>
+                        <option value="16-17">16:00 - 17:00</option>
+                        <option value="17-18">17:00 - 18:00</option>
+                        <option value="18-19">18:00 - 19:00</option>
+                        <option value="19-20">19:00 - 20:00</option>
+                        <option value="20-21">20:00 - 21:00</option>
+                        <option value="21-22">21:00 - 22:00</option>
+                        <option value="22-23">22:00 - 23:00</option>
+                        <option value="23-00">23:00 - 00:00</option>
+                    </select>
+
+                    <input type="submit" value="Search">
+                </form>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+        <div class="main-nav d-flex align-items-center">
+            <!-- <button type="button" id="showDetailsButton" class="btn btn-dark me-1" style="display: none;">Show
+             Details</button> -->
+
+
+        </div>
+        <div class="main-nav d-flex align-items-center">
+            <span id="noLoggedInMessage" style="display: none;"></span>
+        </div>
+    </nav>
+    <div id="fields-container">
+        <!-- Terenurile vor fi adăugate aici de scriptul JavaScript -->
+    </div>
+
+    <script type="module" src="js/fields.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,23 @@
+{
+  "name": "gith",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MdImranHosen/Firebase-email-registration-login.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MdImranHosen/Firebase-email-registration-login/issues"
+  },
+  "homepage": "https://github.com/MdImranHosen/Firebase-email-registration-login#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "firebase": "^9.22.0"
+  }
+}

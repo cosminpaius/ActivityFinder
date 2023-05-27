@@ -1,0 +1,227 @@
+/* Variables */
+.navbar {
+    background-color: #0d120d;
+}
+
+.navbar .navbar-toggle {
+    margin-top: 20px;
+}
+
+.navbar .navbar-brand {
+    height: 0px;
+}
+
+.navbar .navbar-nav li a {
+    height: 80px;
+    line-height: 80px;
+    padding-top: 0;
+}
+
+.navbar .logo {
+    margin-top: 17.5px;
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: #939393 !important;
+    font-family: Roboto;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.header-container .jared-illustration {
+    margin: 0 auto;
+}
+
+.header-container .jared-header {
+    font-family: Amaranth;
+    font-size: 40px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #f57a23;
+}
+
+.header-container .jared-subheader {
+    font-family: Roboto;
+    font-size: 22px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
+
+.header-container .jared-subtext {
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
+
+.body-partition,
+.green-body {
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.body-header,
+.white-header,
+.green-header,
+.grey-header {
+    font-family: Amaranth;
+    font-size: 30px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.body-header.small,
+.small.white-header,
+.small.green-header,
+.small.grey-header {
+    font-size: 22px;
+}
+
+.centered-image {
+    margin: 0 auto;
+}
+
+.green-body {
+    background-color: #29aaa5;
+}
+
+.white-header {
+    color: white;
+}
+
+.green-header {
+    color: #29aaa5;
+}
+
+.grey-header {
+    color: #4a4a4a;
+}
+
+.paragraph,
+.white-paragraph,
+.grey-paragraph {
+    font-family: Roboto;
+    font-size: 17px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+.paragraph.bold,
+.bold.white-paragraph,
+.bold.grey-paragraph {
+    font-weight: bold;
+}
+
+.white-paragraph {
+    color: white;
+}
+
+.grey-paragraph {
+    color: #4a4a4a;
+}
+
+.body-image {
+    max-width: 100%;
+}
+
+.input {
+    padding: 10px 5px !important;
+    margin-top: 20px;
+    width: 100% !important;
+    border-style: none !important;
+    border-bottom: solid 1px #d8d8d8 !important;
+    font-family: Roboto;
+    font-size: 17px;
+}
+
+.form-button {
+    height: 50px;
+    width: 180px !important;
+    margin: 50px auto !important;
+    border: 0 !important;
+    text-align: center !important;
+    background-color: #f57a23;
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+}
+
+#mce-responses {
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+#mce-responses .response {
+    padding: 0 !important;
+    margin: 10px 0 !important;
+    width: auto !important;
+}
+
+
+@media (max-width: 767px) {
+    .footer {
+        height: auto;
+        padding: 40px;
+    }
+
+    .footer .footer-logo {
+        float: none;
+        margin-bottom: 20px;
+    }
+}
+
+.terms-and-conditions {
+    font-family: Roboto;
+    margin-bottom: 30px;
+}
+
+.terms-and-conditions .col {
+    margin-top: 10px;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+.marginalized {
+    margin-bottom: 60px;
+}
+
+.vertically-padded,
+.padded {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.padded {
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.separator {
+    height: 60px;
+}

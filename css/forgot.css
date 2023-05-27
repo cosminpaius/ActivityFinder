@@ -1,0 +1,160 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.small-text {
+    font-size: 16px;
+}
+
+body {
+    background: url('/images/background1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    background-color: white;
+    margin-top: auto;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+.container.reset-container {
+    max-width: 400px;
+    margin: auto auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container.reset-container form {
+    margin-top: 20px;
+}
+
+.container.reset-container label {
+    font-weight: bold;
+}
+
+.container.reset-container input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.container.reset-container small {
+    color: #888;
+}
+
+.container.reset-container button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #222427;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container.reset-container button[type="submit"]:hover {
+    background-color: #000000;
+}
+
+.nav-link {
+
+    font-size: 3rem;
+    /* Mărește dimensiunea fontului */
+    font-family: 'Montserrat', sans-serif;
+}
+
+.main-nav .btn {
+    padding: 10px 20px;
+    /* ajustează spațiul în interiorul butonului */
+    font-size: 1rem;
+    /* ajustează dimensiunea textului în buton */
+}
+
+.navbar .container {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.main-nav ul {
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    margin: 0;
+    padding: 0;
+}
+
+.main-nav li {
+    list-style: none;
+    float: left;
+}
+
+.main-nav a {
+    display: block;
+    height: 50px;
+    margin: 10px;
+    padding: 2px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+    line-height: 45px;
+    color: #FFF;
+    -webkit-transition: all 0.30s ease-in-out;
+    -moz-transition: all 0.30s ease-in-out;
+    -ms-transition: all 0.30s ease-in-out;
+    -o-transition: all 0.30s ease-in-out;
+}
+
+.main-nav li:nth-child(1) a {
+    background: #000;
+    border: 2px solid #fff;
+}
+
+.main-nav li:nth-child(1) a:hover {
+    background: #000601;
+    border: 2px solid #000000;
+}
+
+.main-nav li:nth-child(2) a {
+    background: #000;
+    border: 2px solid #fff;
+}
+
+.main-nav li:nth-child(2) a:hover {
+    background: #000601;
+    border: 2px solid #000000;
+}
+
+.main-nav li:nth-child(3) a {
+    background: #000;
+    border: 2px solid #fff;
+}
+
+.main-nav li:nth-child(3) a:hover {
+    background: #000601;
+    border: 2px solid #000000;
+}
+
+.navbar-brand {
+    padding: 0;
+}
+
+.navbar-brand img {
+    margin-top: -5px;
+}

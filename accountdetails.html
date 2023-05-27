@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        type="text/css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/cdb.min.css" />
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
+
+    <!-- Includerea CSS Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- CSS personalizat -->
+    <link rel="stylesheet" href="/css/accountdetails.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="
+    padding-bottom: 4px;padding-top: 4px;">
+        <!-- Container wrapper -->
+        <div class="container-fluid">
+            <!-- Navbar brand -->
+            <a class="navbar-brand me-2" href="index.html">
+                <img src="images/logo.png" height="55" alt="Logo" loading="lazy" style="margin-top: -1px;" />
+            </a>
+
+            <!-- Collapsible wrapper -->
+            <div class="collapse navbar-collapse" id="navbarButtonsExample">
+                <!-- Left links -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><span class="small-text">ActivityFinder</span></a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- Collapsible wrapper -->
+        </div>
+        <!-- Container wrapper -->
+        <div class="main-nav d-flex align-items-center">
+            <button type="button" id="addCourtButton" class="btn btn-dark me-1" style="display: none;">Add
+                Field</button>
+            <button type="button" id="showDetailsButton" class="btn btn-dark me-1" style="display: none;">Show
+                Details</button>
+            <button type="button" id="showFieldsButton" class="btn btn-dark me-1" style="display: none;">Show My
+                Fields</button>
+            <button type="button" id="showBookingsButton" class="btn btn-dark me-1" style="display: none;">Show My
+                Bookings</button>
+        </div>
+    </nav>
+    <!-- FOOTER -->
+    <!-- <div class="blockcode">
+    <div class="header">ActivityFinder</div>
+    <div class="description"></div> -->
+    <!-- Butonul "Adăugare teren" -->
+
+    <div id="container" class="container" style="display:none;">
+        <img class="account-img mb-3 rounded-circle mx-auto d-block" src="images/user.png">
+        <div class="card bg-secondary text-white rounded">
+            <div class="card-body">
+                <div id="username" class="account-detail mb-2">
+                    <strong class="text-uppercase">Username:</strong>
+                    <span id="usernameValue"></span>
+                    <button class="btn btn-primary edit-btn" onclick="makeEditable('usernameValue')">Edit</button>
+                </div>
+                <div id="phoneNumber" class="account-detail mb-2">
+                    <strong class="text-uppercase">Phone Number:</strong>
+                    <span id="phoneValue"></span>
+                    <button class="btn btn-primary edit-btn" onclick="makeEditable('phoneValue')">Edit</button>
+                </div>
+                <div id="accountType" class="account-detail mb-2">
+                    <strong class="text-uppercase">Account Type:</strong>
+                    <span id="accountTypeValue"></span>
+                </div>
+                <div id="mail" class="account-detail mb-2">
+                    <strong class="text-uppercase">E-Mail Address:</strong>
+                    <span id="mailValue"></span>
+                </div>
+                <div id="companyName" class="account-detail mb-2">
+                    <strong class="text-uppercase">Company Name:</strong>
+                    <span id="companyNameValue"></span>
+                    <button class="btn btn-primary edit-btn" onclick="makeEditable('companyNameValue')">Edit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="fields-container">
+        <!-- Terenurile vor fi adăugate aici de scriptul JavaScript -->
+    </div>
+
+    <div id="bookings-container">
+        <!-- Rezervarile vor fi adăugate aici de scriptul JavaScript -->
+    </div>
+
+    <!-- Formularul de adăugare teren (inițial ascuns) -->
+    <div id="addCourtForm"
+        style="display: none; padding: 20px; background: rgba(255, 255, 255, 0.1); border: 1px solid #555; border-radius: 10px; box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);">
+        <form>
+            <div class="mb-3 text-white">
+                <label for="descriptionInput" class="form-label">Description</label>
+                <input type="text" class="form-control bg-dark text-white border-light" id="descriptionInput"
+                    placeholder="Introduceți descrierea">
+            </div>
+            <div class="mb-3 text-white">
+                <label for="nameInput" class="form-label">Field Name</label>
+                <input type="text" class="form-control bg-dark text-white border-light" id="nameInput"
+                    placeholder="Introduceți numele">
+            </div>
+            <div class="mb-3 text-white">
+                <label for="cityInput" class="form-label">City</label>
+                <select class="form-control bg-dark text-white border-light" id="cityInput" required>
+                    <option value="">Selectează orașul</option>
+                    <option value="Bucuresti">Bucuresti</option>
+                    <option value="Constanta">Constanta</option>
+                    <option value="Pitesti">Pitesti</option>
+                    <option value="Cluj">Cluj</option>
+                    <option value="Timisoara">Timisoara</option>
+                    <option value="Iasi">Iasi</option>
+                </select>
+            </div>
+            <div class="mb-3 text-white">
+                <label for="priceInput" class="form-label">Price</label>
+                <input type="number" min="1" class="form-control bg-dark text-white border-light" id="priceInput"
+                    placeholder="Introduceți prețul" required>
+            </div>
+            <div class="mb-3 text-white">
+                <label for="sportInput" class="form-label">Sport</label>
+                <select class="form-control bg-dark text-white border-light" id="sportInput" required>
+                    <option value="">Selectează sportul</option>
+                    <option value="Fotbal">Fotbal</option>
+                    <option value="Tenis de camp">Tenis de camp</option>
+                    <option value="Baschet">Baschet</option>
+                    <option value="Tenis de masa">Tenis de masa</option>
+                    <option value="Squash">Squash</option>
+                    <option value="Handbal">Handbal</option>
+                </select>
+            </div>
+            <div class="mb-3 text-white">
+                <label for="imageInput" class="form-label">Field Image</label>
+                <input type="file" class="form-control bg-dark text-white border-light" id="imageInput" accept="image/*"
+                    required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" id="submitFieldButton">Add Field</button>
+        </form>
+    </div>
+
+
+
+
+
+    <footer class="shadow">
+        <div class="d-flex justify-content-between align-items-center mx-auto py-4 flex-wrap" style="width: 80%">
+            <a class="d-flex align-items-center p-0 text-dark">
+                <img alt="logo" src="images/logo.png" width="30px" />
+                <span class="ms-4 h5 font-weight-bold">ActivityFinder</span>
+            </a>
+            <small>&copy; ActivityFinder 2023. All rights reserved.</small>
+            <div>
+                <button class="btn btn-dark btn-flat p-2">
+                    <i class="fa fa-facebook"></i>
+                </button>
+                <button class="btn btn-dark btn-flat p-2">
+                    <i class="fa fa-twitter"></i>
+                </button>
+                <button class="btn btn-dark btn-flat p-2">
+                    <i class="fa fa-instagram"></i>
+                </button>
+            </div>
+        </div>
+    </footer>
+    <!-- </div> -->
+    <!-- Includerea JavaScript Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
+
+    <script src="/js/accountdetails.js"></script>
+</body>
+
+</html>

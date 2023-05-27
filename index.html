@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Activity Finder</title>
+	<!-- FONTS -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cdbootstrap/css/cdb.min.css" />
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css'>
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+</head>
+
+<body>
+
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<!-- Container wrapper -->
+		<div class="container-fluid">
+			<!-- Navbar brand -->
+			<a class="navbar-brand me-2" href="">
+				<img src="images/logo.png" height="50" alt="Logo" loading="lazy" style="margin-top: -1px;" />
+			</a>
+
+			<!-- Collapsible wrapper -->
+			<div class="collapse navbar-collapse" id="navbarButtonsExample">
+				<!-- Left links -->
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item">
+						<a class="nav-link small-text" href="#">ActivityFinder</a>
+					</li>
+				</ul>
+				<!-- Left links -->
+
+				<div class="main-nav d-flex align-items-center">
+					<button type="button" class="signin btn btn-dark me-1">
+						Login
+					</button>
+					<button type="button" class="signup-rentee btn btn-dark me-1">
+						Register
+					</button>
+					<button type="button" id="logout-button" class="btn btn-dark me-1" style="display: none;">
+						Logout
+					</button>
+					<button type="button" id="account-details-button" class="btn btn-dark me-1" style="display: none;">
+						Account Details
+					</button>
+
+				</div>
+			</div>
+			<!-- Collapsible wrapper -->
+		</div>
+		<!-- Container wrapper -->
+	</nav>
+
+	<!-- Search Bar -->
+	<div class="search-bar">
+		<h2 class="search-title">Where Players Meet the Playground</h2>
+		<form action="fields.html" method="get">
+			<select name="city">
+				<option value="">Selectează orașul</option>
+				<option value="Bucuresti">Bucuresti</option>
+				<option value="Constanta">Constanta</option>
+				<option value="Pitesti">Pitesti</option>
+				<option value="Cluj">Cluj</option>
+				<option value="Timisoara">Timisoara</option>
+				<option value="Iasi">Iasi</option>
+			</select>
+			<select name="sport">
+				<option value="">Selectează sportul</option>
+				<option value="Fotbal">Fotbal</option>
+				<option value="Tenis de camp">Tenis de camp</option>
+				<option value="Baschet">Baschet</option>
+				<option value="Tenis de masa">Tenis de masa</option>
+				<option value="Squash">Squash</option>
+				<option value="Handbal">Handbal</option>
+			</select>
+			<input type="date" name="date" placeholder="Selectează data" required>
+			<!-- <input type="time" name="time" placeholder="Selectează ora" step="3600" value="00:00"> -->
+			<select name="hour" required>
+				<option value="">Selectează ora</option>
+				<option value="10-11">10:00 - 11:00</option>
+				<option value="11-12">11:00 - 12:00</option>
+				<option value="12-13">12:00 - 13:00</option>
+				<option value="13-14">13:00 - 14:00</option>
+				<option value="14-15">14:00 - 15:00</option>
+				<option value="15-16">15:00 - 16:00</option>
+				<option value="16-17">16:00 - 17:00</option>
+				<option value="17-18">17:00 - 18:00</option>
+				<option value="18-19">18:00 - 19:00</option>
+				<option value="19-20">19:00 - 20:00</option>
+				<option value="20-21">20:00 - 21:00</option>
+				<option value="21-22">21:00 - 22:00</option>
+				<option value="22-23">22:00 - 23:00</option>
+				<option value="23-00">23:00 - 00:00</option>
+			</select>
+
+			<input type="submit" value="Search">
+		</form>
+	</div>
+
+
+	<div class="user-modal">
+		<div class="user-modal-container">
+			<div>
+				<ul class="switcher btn-group d-flex justify-content-between">
+					<li><a href="#0" class="btn btn-dark rounded-pill" style="--bs-btn-bg: rgb(30, 30, 30)">Sign in</a>
+					</li>
+					<li><a href="#0" class="btn btn-dark rounded-pill register-rentee"
+							style="--bs-btn-bg: rgb(30, 30, 30)">Register
+							as
+							Rentee</a></li>
+					<li><a href="#0" class="btn btn-dark rounded-pill" style="--bs-btn-bg: rgb(30, 30, 30)">Register as
+							Renter</a></li>
+				</ul>
+				<script>
+					// Selectăm toate butoanele din grup
+					const buttons = document.querySelectorAll(".switcher .btn");
+
+					// Selectam butoanele de login/register
+					const loginButton = document.querySelector(".signin");
+					const registerButton = document.querySelector(".signup-rentee");
+
+					buttons.forEach(btn => {
+						btn.addEventListener("click", function () {
+							buttons.forEach(b => {
+								b.classList.remove("btn-warning");
+								b.classList.add("btn-dark");
+								// Adăugăm culoarea când butonul este 'dark'
+								b.style.setProperty('--bs-btn-bg', 'rgb(30, 30, 30)');
+							});
+							this.classList.remove("btn-dark");
+							this.classList.add("btn-warning");
+							// Înlăturăm culoarea când butonul este 'warning'
+							this.style.removeProperty('--bs-btn-bg');
+						});
+					});
+
+					// Adăugăm ascultător de evenimente pe butonul de login
+					loginButton.addEventListener("click", function () {
+						// Găsim butonul 'Sign in'
+						const signInButton = document.querySelector('.switcher a[href="#0"]');
+
+						// Simulăm un click pe el
+						signInButton.click();
+					});
+					registerButton.addEventListener("click", function () {
+						const registerRenteeButton = document.querySelector('.register-rentee');
+						// Simulăm un click pe el
+						registerRenteeButton.click();
+					});
+				</script>
+
+			</div>
+			<div id="login">
+				<form class="form">
+					<p class="fieldset">
+						<label class="image-replace email" for="signin-email">E-mail</label>
+						<input class="full-width has-padding has-border" id="signin-email" type="email"
+							placeholder="E-mail">
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace password" for="signin-password">Password</label>
+						<input class="full-width has-padding has-border" id="signin-password" type="password"
+							placeholder="Password">
+						<a href="#0" class="hide-password">Show</a>
+						<span class="error-message">Wrong password! Try again.</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="remember-me" checked>
+						<label for="remember-me" style="color:white">Remember me</label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width" type="submit" onclick="login()" value="Login">
+					</p>
+				</form>
+
+				<p class="form-bottom-message" style="color:white"><a id="forgot-password-link"
+						href="forgot.html">Forgot your
+						password?</a></p>
+
+				<!-- <a href="#0" class="close-form">Close</a> -->
+			</div>
+
+			<div id="signup_as_rentee">
+				<form class="form">
+					<p class="fieldset">
+						<label class="image-replace username" for="signup-username-rentee">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username-rentee" type="text"
+							placeholder="Username">
+						<span class="error-message">Your username can only contain numeric and alphabetic
+							symbols!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace email" for="signup-email-rentee">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email-rentee" type="email"
+							placeholder="E-mail">
+						<span class="error-message">Enter a valid email address!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace phone" for="signup-phone-rentee">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-phone-rentee" type="text"
+							placeholder="Phone Number">
+						<span class="error-message">Enter a valid phone number!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace password" for="signup-password-rentee">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password-rentee" type="password"
+							placeholder="Password">
+						<a href="#0" class="hide-password">Show</a>
+						<span class="error-message">Your password has to be at least 6 characters long!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms-rentee">
+						<label for="accept-terms-rentee" style="color:white">I agree to the <a class="accept-terms"
+								href="terms.html">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" onclick="registration_as_rentee()"
+							value="Create account">
+					</p>
+				</form>
+
+				<!-- <a href="#0" class="cd-close-form">Close</a> -->
+			</div>
+
+			<div id="signup_as_renter">
+				<form class="form">
+					<p class="fieldset">
+						<label class="image-replace username" for="signup-username-renter">Username</label>
+						<input class="full-width has-padding has-border" id="signup-username-renter" type="text"
+							placeholder="Username">
+						<span class="error-message">Your username can only contain numeric and alphabetic
+							symbols!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace email" for="signup-email-renter">E-mail</label>
+						<input class="full-width has-padding has-border" id="signup-email-renter" type="email"
+							placeholder="E-mail">
+						<span class="error-message">Enter a valid email address!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace phone" for="signup-phone-renter">Phone Number</label>
+						<input class="full-width has-padding has-border" id="signup-phone-renter" type="text"
+							placeholder="Phone Number">
+						<span class="error-message">Enter a valid phone number!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace company" for="signup-company-name">Company Name</label>
+						<input class="full-width has-padding has-border" id="signup-company-name" type="text"
+							placeholder="Company Name">
+						<span class="error-message">Your username can only contain numeric and alphabetic
+							symbols!</span>
+					</p>
+
+					<p class="fieldset">
+						<label class="image-replace password" for="signup-password-renter">Password</label>
+						<input class="full-width has-padding has-border" id="signup-password-renter" type="password"
+							placeholder="Password">
+						<a href="#0" class="hide-password">Show</a>
+						<span class="error-message">Your password has to be at least 6 characters long!</span>
+					</p>
+
+					<p class="fieldset">
+						<input type="checkbox" id="accept-terms-renter">
+						<label for="accept-terms-renter" style="color:white">I agree to the <a class="accept-terms"
+								href="terms.html">Terms</a></label>
+					</p>
+
+					<p class="fieldset">
+						<input class="full-width has-padding" type="submit" onclick="registration_as_renter()"
+							value="Create account">
+					</p>
+				</form>
+				<!-- <a href="#0" class="close-form">Close</a> -->
+			</div>
+		</div>
+	</div>
+
+	<footer class="shadow">
+		<div class="d-flex justify-content-between align-items-center mx-auto py-4 flex-wrap" style="width: 80%">
+			<a class="d-flex align-items-center p-0 text-dark">
+				<img alt="logo" src="images/logo.png" width="30px" />
+				<span class="ms-4 h5 font-weight-bold">ActivityFinder</span>
+			</a>
+			<small>&copy; ActivityFinder 2023. All rights reserved.</small>
+			<div>
+				<button class="btn btn-dark btn-flat p-2">
+					<i class="fa fa-facebook"></i>
+				</button>
+				<button class="btn btn-dark btn-flat p-2">
+					<i class="fa fa-twitter"></i>
+				</button>
+				<button class="btn btn-dark btn-flat p-2">
+					<i class="fa fa-instagram"></i>
+				</button>
+			</div>
+		</div>
+	</footer>
+
+	<!-- partial -->
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<!-- <script src="/js/firebaseconfig.js"></script> -->
+	<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+	<script src="./js/script.js"></script>
+</body>
+
+</html>
